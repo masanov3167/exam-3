@@ -45,7 +45,6 @@ class Group{
 	async getTeachersById(req, res){
 		try{	
 			const {id} = req.params
-			console.log(id);
 			const courses =  await sqlData('select * from users where courseid = $1', id);
 			
 				res.status(200).json({status:200, data: courses})

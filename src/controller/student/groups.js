@@ -47,7 +47,6 @@ class StudentItem{
         try{
             const {id} = req.params;
             const {groupid}  = req.body;
-            console.log(groupid);
             const tasks = await sqlData('select * from homeworks where id = $1', id);
             const user = await sqlData('select * from users where id = $1', req.userId);
             const test = tasks[0].students;
